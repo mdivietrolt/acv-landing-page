@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Viewer Redirect</title>
+    <script>
+        window.onload = function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Controlla se è un dispositivo Android
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.doors.acviewer&hl=en-US";
+            }
+            // Controlla se è un dispositivo iOS (iPhone, iPad, iPod)
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/by/app/aco-viewer/id1621584555";
+            }
+            // Opzionalmente, puoi aggiungere un reindirizzamento di fallback
+            else {
+                document.body.innerHTML = "<h1>Impossibile identificare la tua piattaforma.</h1>";
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Reindirizzamento in corso...</h1>
+</body>
+</html>
